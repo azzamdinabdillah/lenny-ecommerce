@@ -1,8 +1,10 @@
+import { ReactNode } from "react";
+
 export default function Button({
   children,
   variant,
 }: {
-  children: string;
+  children: ReactNode;
   variant: string;
 }) {
   const variants: { [key: string]: string } = {
@@ -10,7 +12,7 @@ export default function Button({
     "primary-light": "btn-primary-light",
   };
 
-  const className: string = `${variants[variant]} w-full lg:eh xl:h2`;
+  const className: string = `${variants[variant]} w-full h-full lg:eh xl:h2`;
 
   return <button className={className}>{children}</button>;
 }

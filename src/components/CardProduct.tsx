@@ -84,7 +84,7 @@ export function CardProduct({
 }: Products) {
   return (
     <>
-      <div className="card-product-component flex gap-6 flex-col pb-5 md:pb-0 flex-grow-1 h-fit">
+      <a href="/products/product-detail" className="card-product-component flex gap-6 flex-col pb-5 md:pb-0 flex-grow-1 h-fit">
         <div className="images bg-l-grey-02 rounded-lg relative h-[130px] flex items-center justify-center lg:h-48 xl:h-[280px]">
           <img src={img} alt="" className="w-[90px] lg:w-[120px] xl:w-[180px]"/>
 
@@ -95,9 +95,7 @@ export function CardProduct({
 
         <div className="text flex gap-1 flex-col">
           <div className="top flex justify-between items-center">
-            {/* <h1 className="h3 text-black-01 w-[60%] whitespace-nowrap overflow-hidden text-ellipsis lg:eh xl:eh-6">{title}</h1> */}
             <h1 className="h3 text-black-01 w-[60%] whitespace-nowrap overflow-hidden text-ellipsis lg:h2 xl:eh-6">{title}</h1>
-            {/* <h2 className="h3 text-dark-green-03 lg:eh xl:eh-6">${price}</h2> */}
             <h2 className="h3 text-dark-green-03 lg:h2 xl:eh-6">${price}</h2>
           </div>
           <h3 className="par-3 text-grey-01 lg:par-2 xl:par-1-16">{location}</h3>
@@ -118,7 +116,7 @@ export function CardProduct({
             <p className="par-3 text-black-01 lg:par-2 xl:par-1-16">{totalSold} sold</p>
           </div>
         </div>
-      </div>
+      </a>
     </>
   );
 }

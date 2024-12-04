@@ -3,7 +3,9 @@ export default function Navbar() {
     <div className="wrapper w-full border-b-2 border-d-grey-01 bg-white">
       <div className="navbar screen-max-size flex px-[24px] lg:px-0 py-[13px] lg:py-[16px] xl:py-[22px] items-center gap-[16px] xl:gap-[35px] flex-wrap mx-auto md:justify-between">
         <div className="left hidden md:block">
-          <img src="/assets/icons/logo.svg" alt="" className="" />
+          <a href="/">
+            <img src="/assets/icons/logo.svg" alt="" className="" />
+          </a>
         </div>
         <div className="mid w-[171px] md:max-w-[480px] xl:max-w-[856px] grow">
           <div className="input-wrapper py-[8px] md:py-[11px] px-[12px] md:px-[16px] relative bg-d-grey-02 rounded-[8px] md:flex items-center">

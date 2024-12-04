@@ -5,6 +5,7 @@ import Dropdown from "../components/Dropdown";
 import Footer from "../components/Footer";
 import InputWithSelect from "../components/InputWithSelect";
 import Navbar from "../components/Navbar";
+import Pagination from "../components/Pagination";
 import Toggle from "../components/Toggle";
 
 export default function SearchResult() {
@@ -12,7 +13,7 @@ export default function SearchResult() {
     <>
       <Navbar />
 
-      <div className="wrapper py-8 px-6 md:py-[60px]">
+      <div className="wrapper py-8 px-6 md:py-[60px] lg:pb-20 xl:pb-[120px]">
         <div className="gap-6 flex flex-col screen-max-size mx-auto lg:gap-8">
           <div className="breadcump">
             <Breadcrump title={["Home", "Electronic", "Gaming Gear"]} />
@@ -30,7 +31,9 @@ export default function SearchResult() {
 
             <div className="filter flex justify-between items-center gap-5">
               <div className="flex gap-3 items-center">
-                <p className="par-2 text-grey-01 xl:par-1-16 hidden md:block xl:par-1-16">Sort By : </p>
+                <p className="par-2 text-grey-01 xl:par-1-16 hidden md:block xl:par-1-16">
+                  Sort By :{" "}
+                </p>
                 <Dropdown menu={["Laptop", "PC", "Handphone"]}>
                   Sort By Relevant Product
                 </Dropdown>
@@ -109,7 +112,9 @@ export default function SearchResult() {
                     </div>
                     <div className="gap-2 flex items-center">
                       <input type="checkbox" className="checkbox" />
-                      <p className="par-2 text-grey-01 xl:par-1-16">Same-day delivery</p>
+                      <p className="par-2 text-grey-01 xl:par-1-16">
+                        Same-day delivery
+                      </p>
                     </div>
                     <div className="gap-2 flex items-center">
                       <input type="checkbox" className="checkbox" />
@@ -158,7 +163,9 @@ export default function SearchResult() {
                   <div className="menu gap-3 flex flex-col">
                     <div className="gap-2 flex items-center">
                       <input type="checkbox" className="checkbox" />
-                      <p className="par-2 text-grey-01 xl:par-1-16">Electronic</p>
+                      <p className="par-2 text-grey-01 xl:par-1-16">
+                        Electronic
+                      </p>
                     </div>
                     <div className="gap-2 flex items-center">
                       <input type="checkbox" className="checkbox" />
@@ -166,7 +173,9 @@ export default function SearchResult() {
                     </div>
                     <div className="gap-2 flex items-center">
                       <input type="checkbox" className="checkbox" />
-                      <p className="par-2 text-grey-01 xl:par-1-16">Action Figure</p>
+                      <p className="par-2 text-grey-01 xl:par-1-16">
+                        Action Figure
+                      </p>
                     </div>
                     <div className="gap-2 flex items-center">
                       <input type="checkbox" className="checkbox" />
@@ -210,8 +219,16 @@ export default function SearchResult() {
                       </a>
                     </div> */}
 
-                    <InputWithSelect option={["USD", "IDR", "YEN"]} variant="light" placeholder="Minimum price"/>
-                    <InputWithSelect option={["USD", "IDR", "YEN"]} variant="light" placeholder="Maximum price"/>
+                    <InputWithSelect
+                      option={["USD", "IDR", "YEN"]}
+                      variant="light"
+                      placeholder="Minimum price"
+                    />
+                    <InputWithSelect
+                      option={["USD", "IDR", "YEN"]}
+                      variant="light"
+                      placeholder="Maximum price"
+                    />
                     <Toggle variant="light">$0 - $200</Toggle>
                     <Toggle variant="light">$200 - $500</Toggle>
                     <Toggle variant="light">$500 - $1500</Toggle>
@@ -219,25 +236,28 @@ export default function SearchResult() {
                 </Accordion>
               </div>
             </div>
-            <div className="list-products grid grid-cols-2 gap-4 gap gap-y-6 md:grid-cols-3 lg:gap-6 w-full lg:grid-cols-3 xl:gap-6">
-              {listProducts.map(
-                ({ img, location, price, rating, title, totalSold }) => (
-                  <CardProduct
-                    img={img}
-                    location={location}
-                    price={price}
-                    rating={rating}
-                    title={title}
-                    totalSold={totalSold}
-                  />
-                )
-              )}
+            <div className="flex flex-col gap-8 md:gap-8 xl:gap-14">
+              <div className="list-products grid grid-cols-2 gap-4 gap gap-y-6 md:grid-cols-3 lg:gap-6 w-full lg:grid-cols-3 xl:gap-6">
+                {listProducts.map(
+                  ({ img, location, price, rating, title, totalSold }) => (
+                    <CardProduct
+                      img={img}
+                      location={location}
+                      price={price}
+                      rating={rating}
+                      title={title}
+                      totalSold={totalSold}
+                    />
+                  )
+                )}
+              </div>
+              <Pagination number={["1", "2", "...", "274"]} />
             </div>
           </div>
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }

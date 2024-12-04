@@ -3,16 +3,18 @@ import { useState } from "react";
 export default function Dropdown({
   children,
   menu,
+  width = 'w-fit',
 }: {
   children: string;
   menu: string[];
+  width?: string;
 }) {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="dropdown relative">
       <div
-        className="btn flex gap-1 p-[10px] rounded-lg border border-d-grey-01 w-fit cursor-pointer lg:py-[11px] lg:px-[16px]"
+        className={`btn flex gap-1 p-[10px] rounded-lg border border-d-grey-01 cursor-pointer lg:py-[11px] lg:px-[16px] justify-between ${width}`}
         onClick={() => setOpen(!open)}
       >
         <h1 className="h4-fw-500 select-none lg:par-2 lg:font-medium text-black-01">{children}</h1>
