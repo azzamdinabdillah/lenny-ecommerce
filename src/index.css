@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/public/assets/fonts/ClashGrotesk-Extralight.woff2") format("woff2"),
+    url("/public/assets/fonts/ClashGrotesk-Extralight.woff") format("woff"),
+    url("/public/assets/fonts/ClashGrotesk-Extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/public/assets/fonts/ClashGrotesk-Light.woff2") format("woff2"),
+    url("/public/assets/fonts/ClashGrotesk-Light.woff") format("woff"),
+    url("/public/assets/fonts/ClashGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/public/assets/fonts/ClashGrotesk-Regular.woff2") format("woff2"),
+    url("/public/assets/fonts/ClashGrotesk-Regular.woff") format("woff"),
+    url("/public/assets/fonts/ClashGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/public/assets/fonts/ClashGrotesk-Medium.woff2") format("woff2"),
+    url("/public/assets/fonts/ClashGrotesk-Medium.woff") format("woff"),
+    url("/public/assets/fonts/ClashGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/public/assets/fonts/ClashGrotesk-Semibold.woff2") format("woff2"),
+    url("/public/assets/fonts/ClashGrotesk-Semibold.woff") format("woff"),
+    url("/public/assets/fonts/ClashGrotesk-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/public/assets/fonts/ClashGrotesk-Bold.woff2") format("woff2"),
+    url("/public/assets/fonts/ClashGrotesk-Bold.woff") format("woff"),
+    url("/public/assets/fonts/ClashGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/public/assets/fonts/ClashGrotesk-Variable.woff2") format("woff2"),
+    url("/public/assets/fonts/ClashGrotesk-Variable.woff") format("woff"),
+    url("/public/assets/fonts/ClashGrotesk-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+* {
+  font-family: "Clash Grotesk";
+}
+
+.list-category::-webkit-scrollbar {
+  /* display: none; */
+  height: 4px;
+  border-radius: 30px;
+}
+
+/* .list-category:hover ::-webkit-scrollbar {
+  display: block;
+} */
+
+/* Track */
+.list-category::-webkit-scrollbar-track {
+  background: #e4e9ee;
+  border-radius: 30px;
+}
+
+/* Handle */
+.list-category::-webkit-scrollbar-thumb {
+  background: #1e4c2f;
+  border-radius: 30px;
+}
+
+/* .list-category {
+  background-color: black;
+} */
+
+input {
+  /* border: none; */
+  outline: none;
+}
+
+.select-wrapper.select-category select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.96004 4.4751L6.70004 7.7351C6.31504 8.1201 5.68504 8.1201 5.30004 7.7351L2.04004 4.4751' stroke='%230B0F0E' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center right 20px;
+  padding-right: 40px;
+}
+
+.select-wrapper.select-category::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width='1' height='20' viewBox='0 0 1 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.5' y1='2.18557e-08' x2='0.499999' y2='20' stroke='%23E4E9EE'/%3E%3C/svg%3E%0A");
+  background-position: center;
+  width: 1px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.hero {
+  background: linear-gradient(
+    180deg,
+    #f7f7f7 55.95%,
+    rgba(247, 247, 247, 0) 58.1%
+  );
+}
+
+hr {
+  border: .5px solid #e4e9ee;
+}
+
+@layer components {
+  .screen-max-size {
+    @apply md:max-w-[740px] lg:max-w-[864px] xl:max-w-[1200px];
+  }
+
+  .border-grey {
+    @apply rounded-lg border border-d-grey-01;
+  }
+
+  .btn-primary {
+    @apply py-[12px] px-[10px] rounded-[8px] bg-dark-green-01 text-white font-semibold hover:bg-transparent hover:border hover:border-dark-green-01 hover:text-dark-green-01 hover:scale-90 h3 transition;
+  }
+
+  .btn-primary-light {
+    @apply py-[12px] px-[10px] rounded-[8px] bg-transparent border border-dark-green-01 text-dark-green-01 font-semibold h3 transition hover:bg-dark-green-01 hover:text-white hover:scale-90;
+  }
+
+  .flex-16 {
+    @apply flex gap-[16px];
+  }
+
+  .checkbox {
+    @apply w-[20px] h-[20px] rounded-md border-[1.5px] border-[#A7A9B7] appearance-none checked:bg-checkbox-checked bg-center checked:border-none cursor-pointer;
+  }
+}
