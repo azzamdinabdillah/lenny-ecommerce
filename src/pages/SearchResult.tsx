@@ -78,7 +78,7 @@ export default function SearchResult() {
             </div>
           </div>
 
-          <div className="md:flex gap-8 md:mt-[20px] items-start xl:gap-10">
+          <div className="md:flex gap-8 md:mt-[20px] items-start xl:gap-10 w-full">
             <div className="filter-side hidden md:block h-fit">
               <div className="flex gap-6 flex-col border-grey px-4 py-6 w-[220px] h-fit xl:w-[278px]">
                 <h1 className="h2 text-black-01 xl:eh-6">Filter Option</h1>
@@ -236,7 +236,7 @@ export default function SearchResult() {
                 </Accordion>
               </div>
             </div>
-            <div className="flex flex-col gap-8 md:gap-8 xl:gap-14">
+            <div className="flex flex-col gap-8 md:gap-8 xl:gap-14 w-full">
               <div className="list-products grid grid-cols-2 gap-4 gap gap-y-6 md:grid-cols-3 lg:gap-6 w-full lg:grid-cols-3 xl:gap-6">
                 {listProducts.map(
                   ({ img, location, price, rating, title, totalSold }) => (

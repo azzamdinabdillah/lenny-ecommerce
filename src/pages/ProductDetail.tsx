@@ -4,6 +4,11 @@ import Navbar from "../components/Navbar";
 import Dropdown from "../components/Dropdown";
 import Button from "../components/Button";
 import Badge from "../components/Badge";
+import CircularProgress from "../components/CircularProgress";
+import { RatingStar } from "../components/RatingStar";
+import ProgressBar from "../components/ProgressBar";
+import RadialProgress from "../components/RadialProgress";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 export default function ProductDetail() {
   const [select, setSelect] = useState<number | null>(0);
@@ -51,6 +56,29 @@ export default function ProductDetail() {
     "LIGHTSPEED USB-A receiver",
     "USB extension cable",
     "User Documentation",
+  ];
+
+  const reviewsTotal: { rating: string; total: number }[] = [
+    {
+      rating: "5.0",
+      total: 2823,
+    },
+    {
+      rating: "4.0",
+      total: 4,
+    },
+    {
+      rating: "3.0",
+      total: 0,
+    },
+    {
+      rating: "2.0",
+      total: 0,
+    },
+    {
+      rating: "1.0",
+      total: 0,
+    },
   ];
 
   return (
@@ -308,6 +336,67 @@ export default function ProductDetail() {
             </div>
 
             <hr />
+
+            <div className="gap-6 flex flex-col">
+              <div className="gap-4 flex flex-col">
+                <h1 className="eh text-black-01">Product Reviews</h1>
+
+                <div className="border-grey p-4 flex flex-col gap-6">
+                  <div className="flex items-center gap-4">
+                    <RadialProgress
+                      rating={4.5}
+                      maxRating={5}
+                      size={64}
+                      color="#FFA439"
+                    />
+                    <div className="flex flex-col gap-1">
+                      <RatingStar amount={5} />
+                      <p className="par-3 font-medium">from 1,25k reviews</p>
+                    </div>
+                  </div>
+
+                  <div className="gap-3 flex flex-col">
+                    {reviewsTotal.map((value, index) => (
+                      <div
+                        className="flex gap-7 items-center justify-between"
+                        key={index}
+                      >
+                        <div className="gap-1 flex items-center justify-between ">
+                          <p className="par-3 font-medium text-black-01 translate-y-[2px]">
+                            {value.rating}
+                          </p>
+                          <img src="/assets/icons/star.svg" alt="" />
+                        </div>
+                        <div className="w-full">
+                          <ProgressBar rating={parseInt(value.rating)} />
+                        </div>
+                        <p className="par-3 font-medium text-black-01">
+                          {value.total}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="gap-6 flex flex-col">
+              <h1 className="eh text-black-01">Review Lists</h1>
+
+              <Tabs>
+                <TabList>
+                  <Tab>Title 1</Tab>
+                  <Tab>Title 2</Tab>
+                </TabList>
+
+                <TabPanel>
+                  <h2>Any content 1</h2>
+                </TabPanel>
+                <TabPanel>
+                  <h2>Any content 2</h2>
+                </TabPanel>
+              </Tabs>
+            </div>
           </div>
         </div>
       </div>
