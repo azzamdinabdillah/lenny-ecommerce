@@ -39,9 +39,11 @@ export function Home() {
             <h1 className="h2 text-black-01 lg:eh-4 xl:eh-2">
               Featured Category
             </h1>
-            <button className="btn-primary-light py-[6px] px-[12px] h3 lg:eh lg:py-[10px] lg:px-4 xl:h2">
-              View Detail
-            </button>
+            <div>
+              <Button variant="primary-light" size="sm">
+                View Detail
+              </Button>
+            </div>
           </div>
           <div className="list-category flex gap-4 overflow-x-scroll pb-8 lg:gap-6 xl:pb-12">
             {listCategories.map((value) => (
@@ -130,9 +132,11 @@ export function Home() {
             <h1 className="h2 text-black-01 lg:eh-4 xl:eh-2">
               Lenny’s Article
             </h1>
-            <button className="btn-primary-light py-[6px] px-[12px] h3 lg:eh lg:py-[10px] lg:px-4 xl:h2">
-              View Detail
-            </button>
+            <div>
+              <Button variant="primary-light" size="sm">
+                View Detail
+              </Button>
+            </div>
           </div>
           <div className="list-category flex flex-col gap-6 pb-8 xl:pb-12 lg:gap-6 md:grid grid-cols-3">
             {listArticles.map(({ title, date, description, img }, index) => (

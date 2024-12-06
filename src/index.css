@@ -133,7 +133,15 @@ input {
 }
 
 hr {
-  border: .5px solid #e4e9ee;
+  border: 0.5px solid #e4e9ee;
+}
+
+.review-tabs {
+  display: none; /* Default */
+}
+
+.react-tabs__tab-panel--selected {
+  display: flex;
 }
 
 @layer components {

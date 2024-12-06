@@ -1,17 +1,4 @@
-interface Review {
-  rating: number;
-  text: string;
-  date: Date;
-  reviewer: string;
-  profilePicture: string;
-  like: number;
-  dislike: number;
-}
-
-interface ReviewLists {
-  category: string;
-  reviews: Review[];
-}
+import { ReviewLists } from "../interfaces/Reviews";
 
 export const reviewLists: ReviewLists[] = [
   {
@@ -25,24 +12,129 @@ export const reviewLists: ReviewLists[] = [
         profilePicture: "/assets/images/review-1.png",
         like: 128,
         dislike: 0,
+        isLike: true,
       },
       {
         rating: 5,
         text: "This is amazing product I have.",
-        date: new Date("2020-07-02T15:29:00"),
+        date: new Date("2020-07-02T13:04:00"),
         reviewer: "Darlene Robertson",
         profilePicture: "/assets/images/review-2.png",
         like: 128,
         dislike: 0,
+        isLike: true,
       },
       {
         rating: 5,
         text: "This is amazing product I have.",
-        date: new Date("2020-07-02T15:29:00"),
+        date: new Date("2020-07-26T22:03:00"),
         reviewer: "Kathryn Murphy",
         profilePicture: "/assets/images/review-3.png",
         like: 128,
         dislike: 0,
+        isLike: false,
+      },
+      {
+        rating: 5,
+        text: "This is amazing product I have.",
+        date: new Date("2020-07-02T22:03:00"),
+        reviewer: "Ronald Richards",
+        profilePicture: "/assets/images/review-4.png",
+        like: 128,
+        dislike: 0,
+        isLike: false,
+      },
+    ],
+  },
+
+  {
+    category: "With Photo & VIdeo",
+    reviews: [
+      {
+        rating: 5,
+        text: "This is amazing product I have.",
+        date: new Date("2020-07-02T15:29:00"),
+        reviewer: "Darrell Steward",
+        profilePicture: "/assets/images/review-1.png",
+        like: 128,
+        dislike: 0,
+        isLike: true,
+      },
+      {
+        rating: 5,
+        text: "This is amazing product I have.",
+        date: new Date("2020-07-02T13:04:00"),
+        reviewer: "Darlene Robertson",
+        profilePicture: "/assets/images/review-2.png",
+        like: 128,
+        dislike: 0,
+        isLike: false,
+      },
+      {
+        rating: 5,
+        text: "This is amazing product I have.",
+        date: new Date("2020-07-26T22:03:00"),
+        reviewer: "Kathryn Murphy",
+        profilePicture: "/assets/images/review-3.png",
+        like: 128,
+        dislike: 0,
+        isLike: true,
+      },
+      {
+        rating: 5,
+        text: "This is amazing product I have.",
+        date: new Date("2020-07-02T22:03:00"),
+        reviewer: "Ronald Richards",
+        profilePicture: "/assets/images/review-4.png",
+        like: 128,
+        dislike: 0,
+        isLike: true,
+      },
+    ],
+  },
+
+  {
+    category: "With Description",
+    reviews: [
+      {
+        rating: 5,
+        text: "This is amazing product I have.",
+        date: new Date("2020-07-02T15:29:00"),
+        reviewer: "Darrell Steward333",
+        profilePicture: "/assets/images/review-1.png",
+        like: 128,
+        dislike: 0,
+        isLike: false,
+      },
+      {
+        rating: 5,
+        text: "This is amazing product I have.",
+        date: new Date("2020-07-02T13:04:00"),
+        reviewer: "Darlene Robertson333",
+        profilePicture: "/assets/images/review-2.png",
+        like: 128,
+        dislike: 0,
+        isLike: true,
+      },
+      {
+        rating: 5,
+        text: "This is amazing product I have.",
+        date: new Date("2020-07-26T22:03:00"),
+        reviewer: "Kathryn Murphy333",
+        profilePicture: "/assets/images/review-3.png",
+        like: 128,
+        dislike: 0,
+        isLike: true,
+      },
+      {
+        rating: 5,
+        text: "This is amazing product I have.",
+        date: new Date("2020-07-02T22:03:00"),
+        reviewer: "Ronald Richards333",
+        profilePicture: "/assets/images/review-4.png",
+        like: 128,
+        dislike: 0,
+        isLike: false,
       },
     ],
   },
