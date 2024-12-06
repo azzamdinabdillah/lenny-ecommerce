@@ -1,9 +1,12 @@
 import Button from "../components/Button";
-import { CardArticle, listArticles } from "../components/CardArticle";
-import { CardCategory, listCategories } from "../components/CardCategory";
-import { CardProduct, listProducts } from "../components/CardProduct";
+import { CardArticle } from "../components/CardArticle";
+import { CardCategory } from "../components/CardCategory";
+import { CardProduct } from "../components/CardProduct";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { listArticles } from "../datas/articles";
+import { listCategories } from "../datas/categories";
+import { listProducts } from "../datas/products";
 
 export function Home() {
   return (

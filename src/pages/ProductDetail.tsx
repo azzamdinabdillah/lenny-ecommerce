@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar";
 import Dropdown from "../components/Dropdown";
 import Button from "../components/Button";
 import Badge from "../components/Badge";
-import CircularProgress from "../components/CircularProgress";
 import { RatingStar } from "../components/RatingStar";
 import ProgressBar from "../components/ProgressBar";
 import RadialProgress from "../components/RadialProgress";

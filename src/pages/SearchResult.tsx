@@ -1,12 +1,13 @@
 import Accordion from "../components/Accordion";
 import { Breadcrump } from "../components/Breadcrump";
-import { CardProduct, listProducts } from "../components/CardProduct";
+import { CardProduct } from "../components/CardProduct";
 import Dropdown from "../components/Dropdown";
 import Footer from "../components/Footer";
 import InputWithSelect from "../components/InputWithSelect";
 import Navbar from "../components/Navbar";
 import Pagination from "../components/Pagination";
 import Toggle from "../components/Toggle";
+import { listProducts } from "../datas/products";
 
 export default function SearchResult() {
   return (
@@ -24,14 +25,14 @@ export default function SearchResult() {
               <h1 className="h2 lg:eh-6 text-black-01 xl:eh-5">
                 Showing product for “Gaming Gear”
               </h1>
-              <h2 className="h4 font-normal lg:par-2 text-grey-01 xl:par-1-16 xl:par-1-16">
+              <h2 className="h4 font-normal lg:par-2 text-grey-01 xl:par-1-16">
                 Showing 1 - 60 Products
               </h2>
             </div>
 
             <div className="filter flex justify-between items-center gap-5">
               <div className="flex gap-3 items-center">
-                <p className="par-2 text-grey-01 xl:par-1-16 hidden md:block xl:par-1-16">
+                <p className="par-2 text-grey-01 xl:par-1-16 hidden md:block">
                   Sort By :{" "}
                 </p>
                 <Dropdown menu={["Laptop", "PC", "Handphone"]}>
