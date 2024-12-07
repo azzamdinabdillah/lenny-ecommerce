@@ -14,12 +14,15 @@ import { listProducts } from "../datas/products";
 import { CardProduct } from "../components/CardProduct";
 import Footer from "../components/Footer";
 import { dateFormatter } from "../helpers/dateFormatter";
+import Accordion from "../components/Accordion";
+import { filterReviews } from "../datas/filters";
 
 export default function ProductDetail() {
   const [select, setSelect] = useState<number | null>(0);
   const [mainImageSrc, setMainImageSrc] = useState<string>(
     "/assets/images/mouse-1.png"
   );
+  const [openFilter, setOpenFilter] = useState<boolean>(false);
 
   const subImage: string[] = [
     "/assets/images/mouse-2.png",
@@ -87,6 +90,34 @@ export default function ProductDetail() {
     },
   ];
 
+  const Filter = () => {
+    return (
+      <div className="flex gap-6 flex-col border-grey px-4 py-6 w-[220px] h-fit xl:w-[278px] bg-white">
+        <h1 className="h2 text-black-01 xl:eh-6">Reviews Filter</h1>
+        <hr />
+
+        {filterReviews.map((filter, index) => (
+          <>
+            <Accordion title={filter.category} isOpen={true} key={index}>
+              <div className="menu gap-3 flex flex-col">
+                {filter.filter.map((filterName, index) => (
+                  <div className="gap-2 flex items-center" key={index}>
+                    <input type="checkbox" className="checkbox" />
+                    <p className="par-2 text-grey-01 xl:par-1-16">
+                      {filterName}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Accordion>
+
+            {filterReviews.length - 1 > index ? <hr /> : ""}
+          </>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <>
       <Navbar />
@@ -102,11 +133,11 @@ export default function ProductDetail() {
           <div className="flex gap-6 flex-col">
             <div className="flex gap-6 flex-col md:flex-row">
               <div className="images gap-3 flex flex-col">
-                <div className="main h-[280px] w-full flex justify-center items-center rounded-lg bg-l-grey-02">
+                <div className="main h-[280px] lg:w-[422px] lg:h-[380px] flex justify-center items-center rounded-lg bg-l-grey-02">
                   <img
                     src={mainImageSrc}
                     alt=""
-                    className="object-contain w-[200px] h-[200px] "
+                    className="object-contain w-[200px] h-[200px] lg:w-[240px] lg:h-[240px]"
                   />
                 </div>
 
@@ -334,7 +365,7 @@ export default function ProductDetail() {
                   </div>
                 </div>
 
-                <div className="flex gap-[17px] w-full">
+                <div className="flex gap-[17px]">
                   <div className="w-full md:w-[115px]">
                     <Button variant="primary-light">
                       <div className="gap-2 flex items-center justify-center">
@@ -400,98 +431,128 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            <div className="gap-6 flex flex-col">
-              <h1 className="eh text-black-01">Review Lists</h1>
+            <div className="md:flex gap-8">
+              <div className="hidden md:block">
+                <Filter />
+              </div>
 
-              <Tabs defaultIndex={0} className={"gap-8 flex-col flex"}>
-                <TabList className="flex gap-2 flex-wrap">
-                  {reviewLists.map((value, index) => (
-                    <>
-                      <Tab
-                        selectedClassName="border-dark-green-03 text-dark-green-03"
-                        className={`rounded-lg border border-d-grey-01 p-[10px] par-3 font-medium text-black-01 h-8 w-fit flex justify-center items-center focus-visible:outline-none cursor-pointer`}
-                        key={index}
-                      >
-                        {value.category}
-                      </Tab>
-                    </>
-                  ))}
-                </TabList>
+              <div className="gap-6 flex flex-col flex-grow-1 w-full">
+                <h1 className="eh text-black-01">Review Lists</h1>
 
-                {reviewLists.map((lists, listsIndex) => (
-                  <>
-                    <TabPanel
-                      key={listsIndex}
-                      className={"flex-col gap-6 flex review-tabs"}
-                    >
-                      {lists.reviews.map((value, index) => (
+                <Tabs defaultIndex={0} className={"gap-8 flex-col flex"}>
+                  <div className="flex justify-between gap-3 items-start">
+                    <TabList className="flex gap-2 flex-wrap">
+                      {reviewLists.map((value, index) => (
                         <>
-                          <div key={index} className="flex flex-col gap-4">
-                            <div className="top gap-3 flex flex-col">
-                              <div className="star flex gap-1 items-center">
-                                {Array.from(
-                                  { length: value.rating },
-                                  (_, index) => (
-                                    <img
-                                      key={index}
-                                      src="/assets/icons/star.svg"
-                                      alt=""
-                                    />
-                                  )
-                                )}
-                              </div>
-
-                              <div>
-                                <h3 className="h3 text-black-01">
-                                  {value.text}
-                                </h3>
-                                <p className="mt-[2px] par-3 text-grey-01">
-                                  {dateFormatter(value.date)}
-                                </p>
-                              </div>
-                            </div>
-
-                            <div className="flex justify-between items-center">
-                              <div className="flex items-center gap-2">
-                                <img
-                                  src={value.profilePicture}
-                                  alt=""
-                                  className="w-6"
-                                />
-                                <h2 className="par-3 text-black-01">
-                                  {value.reviewer}
-                                </h2>
-                              </div>
-
-                              <div className="flex gap-2 items-center">
-                                <div className="border-grey px-[10px] py-[6px] flex gap-1 items-center">
-                                  <img
-                                    src={`/assets/icons/${
-                                      value.isLike ? "like-active" : "like"
-                                    }.svg`}
-                                    alt=""
-                                  />
-                                  <p className="par-3 text-black-01">
-                                    {value.like}
-                                  </p>
-                                </div>
-                                <div className="border-grey px-[10px] py-[6px] flex gap-1 items-center">
-                                  <img src="/assets/icons/dislike.svg" alt="" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          {index !== lists.reviews.length - 1 && <hr />}
+                          <Tab
+                            selectedClassName="border-dark-green-03 text-dark-green-03"
+                            className={`rounded-lg border border-d-grey-01 p-[10px] par-3 font-medium text-black-01 h-8 w-fit flex justify-center items-center focus-visible:outline-none cursor-pointer`}
+                            key={index}
+                          >
+                            {value.category}
+                          </Tab>
                         </>
                       ))}
-                    </TabPanel>
-                  </>
-                ))}
-              </Tabs>
+                    </TabList>
 
-              <div className="mt-4">
-                <Pagination number={["1", "2", "...", "274"]} />
+                    <div className="relative">
+                      <img
+                        src="/assets/icons/filter.svg"
+                        alt=""
+                        className="p-2 border-grey md:hidden cursor-pointer"
+                        onClick={() => setOpenFilter(!openFilter)}
+                      />
+
+                      <div
+                        className={`absolute -bottom-2 translate-y-full z-20 right-0 ${
+                          openFilter ? "block" : "hidden"
+                        }`}
+                      >
+                        <div className="overflow-y-auto h-[400px] shadow-lg">
+                          <Filter />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {reviewLists.map((lists, listsIndex) => (
+                    <>
+                      <TabPanel
+                        key={listsIndex}
+                        className={"flex-col gap-6 flex review-tabs"}
+                      >
+                        {lists.reviews.map((value, index) => (
+                          <>
+                            <div key={index} className="flex flex-col gap-4">
+                              <div className="top gap-3 flex flex-col">
+                                <div className="star flex gap-1 items-center">
+                                  {Array.from(
+                                    { length: value.rating },
+                                    (_, index) => (
+                                      <img
+                                        key={index}
+                                        src="/assets/icons/star.svg"
+                                        alt=""
+                                      />
+                                    )
+                                  )}
+                                </div>
+
+                                <div>
+                                  <h3 className="h3 text-black-01">
+                                    {value.text}
+                                  </h3>
+                                  <p className="mt-[2px] par-3 text-grey-01">
+                                    {dateFormatter(value.date)}
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="flex justify-between items-center">
+                                <div className="flex items-center gap-2">
+                                  <img
+                                    src={value.profilePicture}
+                                    alt=""
+                                    className="w-6"
+                                  />
+                                  <h2 className="par-3 text-black-01">
+                                    {value.reviewer}
+                                  </h2>
+                                </div>
+
+                                <div className="flex gap-2 items-center">
+                                  <div className="border-grey px-[10px] py-[6px] flex gap-1 items-center">
+                                    <img
+                                      src={`/assets/icons/${
+                                        value.isLike ? "like-active" : "like"
+                                      }.svg`}
+                                      alt=""
+                                    />
+                                    <p className="par-3 text-black-01">
+                                      {value.like}
+                                    </p>
+                                  </div>
+                                  <div className="border-grey px-[10px] py-[6px] flex gap-1 items-center">
+                                    <img
+                                      src="/assets/icons/dislike.svg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {index !== lists.reviews.length - 1 && <hr />}
+                          </>
+                        ))}
+                      </TabPanel>
+                    </>
+                  ))}
+                </Tabs>
+
+                <div className="mt-4">
+                  <Pagination number={["1", "2", "...", "274"]} />
+                </div>
               </div>
             </div>
 
