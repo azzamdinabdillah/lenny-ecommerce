@@ -35,7 +35,7 @@ export default function Navbar() {
 
         <div className="right flex gap-[12px] items-center">
           <div className="flex gap-[16px]">
-            <div className="cart relative">
+            <a href="/cart" className="cart relative">
               <img
                 src="/assets/icons/shopping-cart.svg"
                 alt=""
@@ -44,7 +44,7 @@ export default function Navbar() {
               <p className="w-[18px] h-[18px] text-[12px] font-semibold rounded-[30px] border-[1.5px] text-white border-white bg-red-01 flex place-content-center absolute -top-2 -right-2">
                 6
               </p>
-            </div>
+            </a>
             <img
               src="/assets/icons/notification.svg"
               alt=""

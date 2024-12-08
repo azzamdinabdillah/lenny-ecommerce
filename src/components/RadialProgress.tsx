@@ -46,7 +46,7 @@ const RadialProgress = ({
       </svg>
 
       {/* Rating Text */}
-      <span className="h2 text-black-01">{rating.toFixed(1)}</span>
+      <span className="h2 text-black-01 lg:eh-6">{rating.toFixed(1)}</span>
     </div>
   );
 };

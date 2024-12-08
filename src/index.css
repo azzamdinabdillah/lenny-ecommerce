@@ -134,6 +134,8 @@ input {
 
 hr {
   border: 0.5px solid #e4e9ee;
+  transform: scaleY(0.5);
+  transform-origin: top;
 }
 
 .review-tabs {
