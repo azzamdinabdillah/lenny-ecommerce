@@ -3,18 +3,24 @@ import Button from "../components/Button";
 import Dropdown from "../components/Dropdown";
 import { productSummary } from "../datas/productSummary";
 
-export function UsersTransaction({ children }: { children: ReactNode }) {
+export function UsersTransaction({
+  children,
+  title,
+  subTitle,
+}: {
+  children: ReactNode;
+  title?: string;
+  subTitle?: string;
+}) {
   return (
     <div className="wrapper relative py-8 px-6 md:py-[60px] after:h-[240px] after:bg-d-grey-03 after:absolute after:top-0 after:left-0 after:right-0 after:-z-10">
       <div className="screen-max-size flex gap-6 flex-col mx-auto md:gap-8">
         <div className="gap-8 flex flex-col md:gap-14">
           <div className="flex flex-col gap-6 md:flex-row justify-between">
             <div className="flex flex-col gap-1 flex-grow w-full">
-              <h1 className="h2 text-black-01 lg:eh-6 xl:eh-5">
-                Shopping Chart
-              </h1>
+              <h1 className="h2 text-black-01 lg:eh-6 xl:eh-5">{title}</h1>
               <p className="par-3 text-grey-01 lg:par-2 xl:par-1-16">
-                Showing your choices product
+                {subTitle}
               </p>
             </div>
 
@@ -51,7 +57,7 @@ export function Left({ children }: { children: ReactNode }) {
   );
 }
 
-export function Right() {
+export function Right({ btnHref }: { btnHref?: string }) {
   return (
     <div className="flex gap-6 flex-col md:col-span-2 md:bg-white md:border-grey md:p-6 md:sticky top-4 xl:col-span-3">
       <h1 className="eh text-black-01 xl:eh-6">Product Summary</h1>
@@ -114,7 +120,9 @@ export function Right() {
         </div>
       </div>
 
-      <Button variant="primary">Checkout</Button>
+      <a href={btnHref}>
+        <Button variant="primary">Checkout</Button>
+      </a>
     </div>
   );
 }

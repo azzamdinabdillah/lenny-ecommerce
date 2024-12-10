@@ -170,4 +170,8 @@ hr {
   .checkbox {
     @apply w-[20px] h-[20px] rounded-md border-[1.5px] border-[#A7A9B7] appearance-none checked:bg-checkbox-checked bg-center checked:border-none cursor-pointer;
   }
+
+  .title {
+    @apply eh text-black-01 xl:eh-6;
+  }
 }
