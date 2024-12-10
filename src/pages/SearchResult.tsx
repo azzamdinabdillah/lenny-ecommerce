@@ -244,8 +244,8 @@ export default function SearchResult() {
             </div>
           </div>
 
-          <div className="md:flex gap-8 md:mt-[20px] items-start xl:gap-10 w-full">
-            <div className="filter-side hidden md:block h-fit">
+          <div className="md:flex gap-8 md:mt-[20px] items-start xl:gap-10 w-full relative">
+            <div className="filter-side hidden md:block h-fit sticky top-5 left-0 right-0">
               <Filter />
             </div>
             <div className="flex flex-col gap-8 md:gap-8 xl:gap-14 w-full">

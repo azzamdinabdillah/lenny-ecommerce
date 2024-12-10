@@ -4,9 +4,9 @@ import { listProducts } from "../datas/products";
 
 export default function RelatedProducts() {
   return (
-    <div className="">
+    <div className="screen-max-size mx-auto">
       <div className="top flex justify-between items-center">
-        <h1 className="h2 text-black-01 lg:eh-6">Related Product</h1>
+        <h1 className="h2 text-black-01 lg:eh-6 xl:eh-5">Related Product</h1>
         <div>
           <Button variant="primary-light" size="sm">
             View Detail
