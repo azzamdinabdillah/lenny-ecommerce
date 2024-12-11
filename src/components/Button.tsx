@@ -14,6 +14,7 @@ export default function Button({
   const variants: { [key: string]: string } = {
     primary: "btn-primary text-white",
     "primary-light": "btn-primary-light",
+    "grey": "rounded-lg text-black-01 h3 bg-d-grey-01",
     "grey-light": "border-grey rounded-lg text-black-01 h3",
   };
 

@@ -137,7 +137,7 @@ export default function Checkout() {
 
           <hr className="md:hidden" />
 
-          <Right />
+          <Right btnHref="/cart/checkout/payment-method" />
         </UsersTransaction>
 
         <RelatedProducts />

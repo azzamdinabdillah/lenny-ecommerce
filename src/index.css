@@ -146,6 +146,12 @@ hr {
   display: flex;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 2V5' stroke='%23C4C8CC' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 2V5' stroke='%23C4C8CC' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.5 9.08997H20.5' stroke='%23C4C8CC' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z' stroke='%23C4C8CC' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.9945 13.7H12.0035' stroke='%23C4C8CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.29529 13.7H8.30427' stroke='%23C4C8CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.29529 16.7H8.30427' stroke='%23C4C8CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  width: 24px;
+  height: 24px;
+}
+
 @layer components {
   .screen-max-size {
     @apply md:max-w-[740px] lg:max-w-[864px] xl:max-w-[1200px];
@@ -169,6 +175,10 @@ hr {
 
   .checkbox {
     @apply w-[20px] h-[20px] rounded-md border-[1.5px] border-[#A7A9B7] appearance-none checked:bg-checkbox-checked bg-center checked:border-none cursor-pointer;
+  }
+
+  .radio {
+    @apply w-[20px] h-[20px] rounded-full border-[1.5px] border-[#A7A9B7] appearance-none checked:bg-radio-checked bg-center checked:border-none cursor-pointer;
   }
 
   .title {

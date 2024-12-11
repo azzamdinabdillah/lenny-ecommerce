@@ -7,10 +7,12 @@ export function UsersTransaction({
   children,
   title,
   subTitle,
+  sortView = true,
 }: {
   children: ReactNode;
   title?: string;
   subTitle?: string;
+  sortView?: boolean;
 }) {
   return (
     <div className="wrapper relative py-8 px-6 md:py-[60px] after:h-[240px] after:bg-d-grey-03 after:absolute after:top-0 after:left-0 after:right-0 after:-z-10">
@@ -24,19 +26,23 @@ export function UsersTransaction({
               </p>
             </div>
 
-            <div className="flex gap-2 items-center w-full md:w-[245px] lg:w-[278px] xl:gap-4">
-              <p className="par-2 text-grey-01 md:whitespace-nowrap xl:par-1-16">
-                Sort By:
-              </p>
-              <div className="flex-grow md:w-full">
-                <Dropdown
-                  menu={["By Price", "By Category", "By Date"]}
-                  width="100%"
-                >
-                  Latest Added
-                </Dropdown>
+            {sortView ? (
+              <div className="flex gap-2 items-center w-full md:w-[245px] lg:w-[278px] xl:gap-4">
+                <p className="par-2 text-grey-01 md:whitespace-nowrap xl:par-1-16">
+                  Sort By:
+                </p>
+                <div className="flex-grow md:w-full">
+                  <Dropdown
+                    menu={["By Price", "By Category", "By Date"]}
+                    width="100%"
+                  >
+                    Latest Added
+                  </Dropdown>
+                </div>
               </div>
-            </div>
+            ) : (
+              ""
+            )}
           </div>
 
           <div className="gap-8 flex flex-col md:grid md:grid-cols-5 md:items-start xl:grid-cols-9">
@@ -82,7 +88,7 @@ export function Right({ btnHref }: { btnHref?: string }) {
           <p className="par-2 text-grey-01 xl:par-1-16">
             Total Price (Discount)
           </p>
-          <p className="par-2 text-black-01 xl:par-1-16">$98</p>
+          <p className="par-2 text-black-01 xl:par-1-16">-$98</p>
         </div>
         <div className="flex items-center justify-between">
           <p className="par-2 text-grey-01 xl:par-1-16">Tax & Fee</p>

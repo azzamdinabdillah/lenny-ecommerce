@@ -14,6 +14,7 @@ export default {
         "hero-tablet": "url('/assets/images/hero-bg-tablet.png')",
         "hero-dekstop": "url('/assets/images/hero-bg-dekstop.png')",
         "checkbox-checked": "url('/assets/icons/checkbox-checked.svg')",
+        "radio-checked": "url('/assets/icons/radio-checked.svg')",
       },
     },
 
