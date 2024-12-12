@@ -133,9 +133,11 @@ export function Home() {
               Lenny’s Article
             </h1>
             <div>
-              <Button variant="primary-light" size="sm">
-                View Detail
-              </Button>
+              <a href="/blog">
+                <Button variant="primary-light" size="sm">
+                  View Detail
+                </Button>
+              </a>
             </div>
           </div>
           <div className="list-category flex flex-col gap-6 pb-8 xl:pb-12 lg:gap-6 md:grid grid-cols-3">

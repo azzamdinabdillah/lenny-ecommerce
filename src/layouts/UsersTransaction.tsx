@@ -15,7 +15,7 @@ export function UsersTransaction({
   sortView?: boolean;
 }) {
   return (
-    <div className="wrapper relative py-8 px-6 md:py-[60px] after:h-[240px] after:bg-d-grey-03 after:absolute after:top-0 after:left-0 after:right-0 after:-z-10">
+    <div className="wrapper relative py-8 px-6 md:py-[60px] top-grey-background">
       <div className="screen-max-size flex gap-6 flex-col mx-auto md:gap-8">
         <div className="gap-8 flex flex-col md:gap-14">
           <div className="flex flex-col gap-6 md:flex-row justify-between">

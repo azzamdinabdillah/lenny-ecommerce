@@ -184,4 +184,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .title {
     @apply eh text-black-01 xl:eh-6;
   }
+
+  .top-grey-background {
+    @apply after:h-[240px] after:bg-d-grey-03 after:absolute after:top-0 after:left-0 after:right-0 after:-z-10;
+  }
 }

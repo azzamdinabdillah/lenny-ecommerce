@@ -26,7 +26,7 @@ export default function PaymentSuccess() {
               </p>
             </div>
 
-            <div className="gap-4 flex flex-col mt-2 w-full max-w-[256px] md:flex-row xl:max-w-[336px] lg:mt-0">
+            <div className="gap-4 flex flex-col mt-2 w-full md:max-w-[256px] md:flex-row xl:max-w-[336px] lg:mt-0">
               <Button variant="primary" customStyleClass="lg:h3 xl:eh">
                 Back to Home
               </Button>
