@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <div className="wrapper w-full border-b-2 border-d-grey-01 bg-white">
-      <div className="navbar screen-max-size flex px-[24px] lg:px-0 py-[13px] lg:py-[16px] xl:py-[22px] items-center gap-[16px] xl:gap-[35px] flex-wrap mx-auto md:justify-between">
+      <div className="navbar screen-max-size flex px-[24px] md:px-0 py-[13px] lg:py-[16px] xl:py-[22px] items-center gap-[16px] xl:gap-[35px] flex-wrap mx-auto md:justify-between">
         <div className="left hidden md:block">
           <a href="/">
             <img src="/assets/icons/logo.svg" alt="" className="" />

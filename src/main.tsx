@@ -10,6 +10,7 @@ import Checkout from "./pages/Checkout";
 import PaymentMethod from "./pages/PaymentMethod";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/cart/checkout/payment-method" element={<PaymentMethod />} />
         <Route path="/payment-success" element={<PaymentSuccess />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/detail" element={<BlogDetail />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

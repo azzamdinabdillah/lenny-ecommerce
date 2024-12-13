@@ -8,33 +8,38 @@ export function CardArticle({
   description,
   category,
   readTime,
+  href
 }: Articles) {
   return (
     <>
-      <div className="card-article-component gap-4 flex flex-col w-full">
+      <a href={href} className="card-article-component gap-4 flex flex-col w-full">
         <img
           src={img}
           alt=""
           className="object-cover rounded-lg h-[180px] xl:h-[280px]"
         />
-        <div className="text gap-2 xl:gap-3 flex flex-col">
-          <div className="flex gap-4 items-center">
+        <div className="text gap-2 lg:gap-3 flex flex-col">
+          <div className="flex items-center">
             {category && <Badge>{category}</Badge>}
-            <h3 className="par-2 xl:par-1-16 font-normal text-grey-01">
+            <h3 className="par-2 lg:par-3 xl:par-1-16 font-normal text-grey-01">
               {date}{" "}
               {readTime ? (
                 <>
-                  <span>&nbsp; | &nbsp; {readTime} &nbsp; Min Read</span>
+                  <span className={`${readTime} ?? 'ml-4'`}>
+                    &nbsp; | &nbsp; {readTime} &nbsp; Min Read
+                  </span>
                 </>
               ) : (
                 ""
               )}
             </h3>
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 lg:gap-[9px]">
             <h1 className="eh xl:eh-6 text-black-01">{title}</h1>
             <p className="par-2 xl:par-1-16 text-grey-01">
-              {description ? description : (
+              {description ? (
+                description
+              ) : (
                 <div className="flex gap-2 items-center">
                   <p className="par-2 text-black-01 font-medium xl:par-1-16 xl:font-medium">
                     Read More
@@ -60,7 +65,7 @@ export function CardArticle({
             </p>
           </div>
         </div>
-      </div>
+      </a>
     </>
   );
 }

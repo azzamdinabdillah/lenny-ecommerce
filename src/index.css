@@ -188,4 +188,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .top-grey-background {
     @apply after:h-[240px] after:bg-d-grey-03 after:absolute after:top-0 after:left-0 after:right-0 after:-z-10;
   }
+
+  .article-detail-h1 {
+    @apply mb-6 h2 text-black-01;
+  }
+
+  .article-detail-h2 {
+    @apply mb-3 h2 text-black-01;
+  }
+
+  .article-detail-p {
+    @apply mb-6 par-1-18 text-grey-01;
+  }
 }

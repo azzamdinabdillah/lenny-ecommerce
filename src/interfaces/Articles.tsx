@@ -5,4 +5,5 @@ export interface Articles {
   description?: string;
   category?: string;
   readTime?: number
+  href?: string
 }
