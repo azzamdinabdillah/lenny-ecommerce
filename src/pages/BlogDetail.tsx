@@ -20,13 +20,47 @@ export default function BlogDetail() {
             <img
               src="/assets/images/article-4.png"
               alt=""
-              className="h-[180px] rounded-lg w-full"
+              className="h-[180px] rounded-lg w-full object-cover lg:h-[340px] xl:h-[500px]"
             />
 
-            <div>
-              <div className="left"></div>
+            <div className="flex flex-col-reverse lg:flex-row lg:gap-8 lg:items-start">
+              <div className="lg:w-[320px] lg:border-grey lg:p-6 lg:rounded-xl lg:sticky top-4">
+                <div className="left flex flex-col gap-8 w-full lg:gap-6">
+                  <h1 className="title lg:h2">Related Article</h1>
 
-              <div className="right">
+                  <div className="gap-6 flex flex-col md:grid grid-cols-3 lg:flex lg:flex-col lg:gap-4">
+                    {listArticles.map((value, index) => (
+                      <>
+                        <div className="flex gap-4 flex-col lg:flex-row lg:gap-3 lg:items-center" key={index}>
+                          <img
+                            src={value.img}
+                            alt=""
+                            className="h-[180px] object-cover rounded-lg lg:w-[90px] lg:h-[64px]"
+                          />
+                          <h2 className="eh text-black-01 lg:par-2 lg:font-medium xl:par-1-16 lg:font-medium">{value.title}</h2>
+                        </div>
+                      </>
+                    ))}
+                  </div>
+
+                  <hr />
+
+                  <div className="flex justify-between items-center">
+                    <p className="par-1-16 text-black-01 font-medium">
+                      Share to :
+                    </p>
+
+                    <div className="gap-2 flex">
+                      <img src="/assets/icons/fb.svg" alt="" />
+                      <img src="/assets/icons/ig.svg" alt="" />
+                      <img src="/assets/icons/twitter.svg" alt="" />
+                      <img src="/assets/icons/wa.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="right flex-1">
                 <h1 className="article-detail-h1">
                   I’m an Lenny delivery driver in Baltimore. My favorite
                   features on our vans from Rivian are the air-conditioned seats
@@ -111,43 +145,12 @@ export default function BlogDetail() {
               </div>
             </div>
           </div>
-
-          <div className="flex flex-col gap-8">
-            <h1 className="title">Related Article</h1>
-
-            <div className="gap-6 flex flex-col">
-              {listArticles.map((value, index) => (
-                <>
-                  <div className="flex gap-4 flex-col" key={index}>
-                    <img
-                      src={value.img}
-                      alt=""
-                      className="h-[180px] object-cover rounded-lg"
-                    />
-                    <h2 className="eh text-black-01">{value.title}</h2>
-                  </div>
-                </>
-              ))}
-            </div>
-
-            <hr />
-
-            <div className="flex justify-between items-center">
-              <p className="par-1-16 text-black-01 font-medium">Share to :</p>
-
-              <div className="gap-2 flex">
-                <img src="/assets/icons/fb.svg" alt="" />
-                <img src="/assets/icons/ig.svg" alt="" />
-                <img src="/assets/icons/twitter.svg" alt="" />
-                <img src="/assets/icons/wa.svg" alt="" />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
-      <div className="lg:mt-[80px]"></div>
-      <Footer />
+      <div className="mt-[60px] lg:mt-[80px]">
+        <Footer />
+      </div>
     </>
   );
 }
