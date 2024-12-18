@@ -2,15 +2,23 @@ export function InputText({
   labelName,
   placeholder,
   value,
+  labelSize = 'regular'
 }: {
   labelName: string;
   placeholder: string;
   value?: string;
+  labelSize?: string;
 }) {
+
+  const labelSizing: {[key: string]: string} = {
+    regular: 'h3 text-black-01 lg:eh',
+    lg: 'eh text-black-01',
+  }
+
   return (
     <>
       <div className="flex flex-col gap-2 w-full">
-        <label htmlFor={labelName} className="h3 text-black-01 lg:eh">
+        <label htmlFor={labelName} className={`${labelSizing[labelSize]}`}>
           {labelName}
         </label>
         <input
