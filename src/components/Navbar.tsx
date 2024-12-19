@@ -1,14 +1,17 @@
 import { useState } from "react";
 import ProfilePopUp from "../layouts/ProfilePopUp";
 import { ModalSignIn } from "../layouts/Modals/ModalSignIn";
+import { ModalSignUp } from "../layouts/Modals/ModalSignUp";
 
 export default function Navbar() {
   const [openProfile, setOpenProfile] = useState<Boolean>(false);
   const [openSignIn, setOpenSignIn] = useState<Boolean>(false);
+  const [openSignUp, setOpenSignUp] = useState<Boolean>(false);
 
   return (
     <div className="wrapper w-full border-b-2 border-d-grey-01 bg-white">
-      {openSignIn ? <ModalSignIn setOpenSignIn={setOpenSignIn}/> : ""}
+      {openSignIn ? <ModalSignIn setOpenSignIn={setOpenSignIn} /> : ""}
+      {openSignUp ? <ModalSignUp setOpenSignUp={setOpenSignUp} /> : ""}
       <div className="navbar screen-max-size flex px-[24px] md:px-0 py-[13px] lg:py-[16px] xl:py-[22px] items-center gap-[16px] xl:gap-[35px] flex-wrap mx-auto md:justify-between">
         <div className="left hidden md:block">
           <a href="/">
@@ -69,22 +72,24 @@ export default function Navbar() {
             src="/assets/icons/menu.svg"
             alt=""
             className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] md:hidden"
+            onClick={() => setOpenProfile(!openProfile)}
           />
           <div className="relative">
             <img
               src="/assets/images/user.png"
               alt=""
-              className="w-[38px] h-[38px] hidden lg:block cursor-pointer hover:scale-105 transition"
+              className="w-[38px] h-[38px] hidden md:block cursor-pointer hover:scale-105 transition"
               onClick={() => setOpenProfile(!openProfile)}
             />
 
             <div
-              className={`absolute z-20 translate-y-14 right-0 w-[410px] shadow-lg border-grey rounded-lg overflow-hidden ${
+              className={`fixed w-[90%] left-1/2 -translate-x-1/2 translate-y-10 md:absolute z-20 md:translate-x-[unset] md:left-[unset] md:translate-y-14 right-0 md:w-[410px] shadow-lg border-grey rounded-lg overflow-hidden ${
                 openProfile ? "block" : "hidden"
               }`}
             >
               <ProfilePopUp
                 setOpenSignIn={setOpenSignIn}
+                setOpenSignUp={setOpenSignUp}
               />
             </div>
           </div>

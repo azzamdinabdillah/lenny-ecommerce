@@ -132,7 +132,10 @@ export default function ProductDetail() {
           <div className="flex gap-6 flex-col lg:gap-[52px]">
             <div className="flex gap-6 flex-col md:flex-row md:grid grid-cols-2 md:gap-8 lg:items-center xl:gap-[42px]">
               <div className="images gap-3 flex flex-col">
-                <div className="main w-full h-[280px] lg:h-[380px] flex justify-center items-center rounded-lg bg-l-grey-02 xl:h-[460px]">
+                <div
+                  className="main w-full h-[280px] lg:h-[380px] flex justify-center items-center rounded-lg bg-l-grey-02 xl:h-[460px]"
+                  data-aos="fade-right"
+                >
                   <img
                     src={mainImageSrc}
                     alt=""
@@ -140,27 +143,38 @@ export default function ProductDetail() {
                   />
                 </div>
 
-                <div className="sub flex gap-2">
+                <div className="sub flex gap-2" data-aos-delay="1000">
                   {subImage.map((value, index) => (
                     <div
-                      onClick={() => setSelect(index)}
-                      className={`item w-full h-[75px] lg:h-[100px] xl:h-[134px] flex justify-center items-center rounded-lg bg-l-grey-02 transition-all duration-300 ease-in-out cursor-pointer ${
-                        select == index && "border-[2px] border-dark-green-01"
-                      }`}
+                      data-aos-delay={`${index * 250}`}
+                      data-aos="fade-up"
+                      key={index}
+                      className="w-full"
                     >
-                      <img
-                        onClick={handleImageClick}
-                        key={index}
-                        src={value}
-                        alt=""
-                        className="object-contain w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] xl:w-[86px] xl:h-[86px]"
-                      />
+                      <div
+                        onClick={() => setSelect(index)}
+                        className={`item w-full h-[75px] lg:h-[100px] xl:h-[134px] flex justify-center items-center rounded-lg bg-l-grey-02 transition-all duration-300 ease-in-out cursor-pointer ${
+                          select == index && "border-[2px] border-dark-green-01"
+                        }`}
+                      >
+                        <img
+                          onClick={handleImageClick}
+                          key={index}
+                          src={value}
+                          alt=""
+                          className="object-contain w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] xl:w-[86px] xl:h-[86px]"
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="flex gap-6 flex-col">
+              <div
+                className="flex gap-6 flex-col"
+                data-aos-delay="500"
+                data-aos="fade-left"
+              >
                 <div className="flex flex-col gap-4">
                   <div>
                     <h1 className="eh-5 text-black-01 xl:eh-2">
@@ -244,7 +258,10 @@ export default function ProductDetail() {
             </div>
 
             <div className="flex gap-6 flex-col lg:gap-[52px] relative">
-              <div className="tab flex border-b-[2px] border-[#E4E9EE] overflow-x-scroll scrollbar-none sticky top-0 bg-white z-10">
+              <div
+                className="tab flex border-b-[2px] border-[#E4E9EE] overflow-x-scroll scrollbar-none sticky top-0 bg-white z-10"
+                data-aos="fade-up"
+              >
                 <div className="item py-[11px] px-4 lg:py-3 lg:px-6 border-b-[2px] border-dark-green-01">
                   <a
                     href=""
@@ -279,7 +296,7 @@ export default function ProductDetail() {
                 </div>
               </div>
 
-              <div className="flex gap-6 flex-col lg:gap-8">
+              <div className="flex gap-6 flex-col lg:gap-8" data-aos="fade-up">
                 <div className="flex flex-col gap-2 lg:max-w-[670px] xl:max-w-[893px]">
                   <h1 className="h2 text-black-01 lg:eh-6 xl:eh-4">
                     G502 X Lightspeed Wireless Gaming Mouse
@@ -292,7 +309,10 @@ export default function ProductDetail() {
                   </p>
                 </div>
 
-                <div className="flex gap-6 flex-col md:flex-row lg:gap-8 xl:grid grid-cols-3">
+                <div
+                  className="flex gap-6 flex-col md:flex-row lg:gap-8 xl:grid grid-cols-3"
+                  data-aos="fade-up"
+                >
                   <div className="gap-4 flex flex-col ">
                     <h1 className="eh text-black-01 xl:h2">Specification</h1>
                     <table>
@@ -314,7 +334,10 @@ export default function ProductDetail() {
                     </table>
                   </div>
 
-                  <div className="gap-4 flex flex-col mt-2 flex-1 lg:mt-0">
+                  <div
+                    className="gap-4 flex flex-col mt-2 flex-1 lg:mt-0"
+                    data-aos="fade-up"
+                  >
                     <h1 className="eh text-black-01 xl:h2">In The Box</h1>
 
                     <div className="gap-3 flex flex-col">
@@ -332,7 +355,10 @@ export default function ProductDetail() {
                     </div>
                   </div>
 
-                  <div className="gap-4 flex flex-col mt-2 flex-1 lg:mt-0">
+                  <div
+                    className="gap-4 flex flex-col mt-2 flex-1 lg:mt-0"
+                    data-aos="fade-up"
+                  >
                     <h1 className="eh text-black-01 xl:h2">System Required</h1>
 
                     <div className="flex flex-col">
@@ -355,7 +381,7 @@ export default function ProductDetail() {
 
               <hr />
 
-              <div className="gap-4 flex flex-col lg:gap-6">
+              <div className="gap-4 flex flex-col lg:gap-6" data-aos="fade-up">
                 <h1 className="eh text-black-01 lg:eh-6">
                   Merchant Information
                 </h1>
@@ -419,7 +445,10 @@ export default function ProductDetail() {
                       Product Reviews
                     </h1>
 
-                    <div className="border-grey p-4 flex flex-col gap-6 md:flex-row md:items-start lg:gap-[42px] lg:p-6 xl:gap-[120px]">
+                    <div
+                      className="border-grey p-4 flex flex-col gap-6 md:flex-row md:items-start lg:gap-[42px] lg:p-6 xl:gap-[120px]"
+                      data-aos="fade-up"
+                    >
                       <div className="flex items-center gap-4">
                         <RadialProgress
                           rating={4.5}
@@ -439,6 +468,8 @@ export default function ProductDetail() {
                         {reviewsTotal.map((value, index) => (
                           <div
                             className="flex gap-7 items-center justify-between"
+                            data-aos="fade"
+                            data-aos-delay={`${index * 100}`}
                             key={index}
                           >
                             <div className="gap-1 flex items-center justify-between ">
@@ -517,6 +548,8 @@ export default function ProductDetail() {
                                 <div
                                   key={index}
                                   className="flex flex-col gap-4"
+                                  data-aos="fade"
+                                  data-aos-delay={`${index * 100}`}
                                 >
                                   <div className="top gap-3 flex flex-col lg:gap-4">
                                     <div className="star flex gap-1 items-center">

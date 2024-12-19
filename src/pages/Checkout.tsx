@@ -81,7 +81,11 @@ export default function Checkout() {
                         <div className="gap-6 flex flex-col mt-6 xl:mt-8">
                           {lists.products.map((product, productIndex) => (
                             <>
-                              <div key={productIndex}>
+                              <div
+                                key={productIndex}
+                                data-aos="zoom-in"
+                                data-aos-delay={`${productIndex * 100}`}
+                              >
                                 <CartProductCard
                                   location={product.location}
                                   title={product.title}

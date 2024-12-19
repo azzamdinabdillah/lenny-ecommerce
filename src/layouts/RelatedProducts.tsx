@@ -15,15 +15,21 @@ export default function RelatedProducts() {
       </div>
       <div className="list-products grid grid-cols-2 gap-4 gap gap-y-6 mt-7 md:grid-cols-4 lg:mt-[52px] lg:gap-6">
         {listProducts.map(
-          ({ img, location, price, rating, title, totalSold }) => (
-            <CardProduct
-              img={img}
-              location={location}
-              price={price}
-              rating={rating}
-              title={title}
-              totalSold={totalSold}
-            />
+          ({ img, location, price, rating, title, totalSold }, index) => (
+            <div
+              key={index}
+              data-aos="zoom-in"
+              data-aos-delay={`${index * 50}`}
+            >
+              <CardProduct
+                img={img}
+                location={location}
+                price={price}
+                rating={rating}
+                title={title}
+                totalSold={totalSold}
+              />
+            </div>
           )
         )}
       </div>

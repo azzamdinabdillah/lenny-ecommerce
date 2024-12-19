@@ -245,21 +245,30 @@ export default function SearchResult() {
           </div>
 
           <div className="md:flex gap-8 md:mt-[20px] items-start xl:gap-10 w-full relative">
-            <div className="filter-side hidden md:block h-fit sticky top-5 left-0 right-0">
+            <div className="filter-side hidden md:block h-fit sticky top-5 left-0 right-0" data-aos="fade-right" data-aos-delay={`500`}>
               <Filter />
             </div>
-            <div className="flex flex-col gap-8 md:gap-8 xl:gap-14 w-full">
+            <div className="flex flex-col gap-8 md:gap-8 xl:gap-14 w-full" data-aos-delay={`20000`}>
               <div className="list-products grid grid-cols-2 gap-4 gap gap-y-6 md:grid-cols-3 lg:gap-6 w-full lg:grid-cols-3 xl:gap-6">
                 {listProducts.map(
-                  ({ img, location, price, rating, title, totalSold }) => (
-                    <CardProduct
-                      img={img}
-                      location={location}
-                      price={price}
-                      rating={rating}
-                      title={title}
-                      totalSold={totalSold}
-                    />
+                  (
+                    { img, location, price, rating, title, totalSold },
+                    index
+                  ) => (
+                    <div
+                      key={index}
+                      data-aos="zoom-in"
+                      data-aos-delay={`${index * 50}`}
+                    >
+                      <CardProduct
+                        img={img}
+                        location={location}
+                        price={price}
+                        rating={rating}
+                        title={title}
+                        totalSold={totalSold}
+                      />
+                    </div>
                   )
                 )}
               </div>

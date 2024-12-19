@@ -20,7 +20,10 @@ export default function Blog() {
           </div>
 
           <div className="mt-8 gap-8 flex flex-col lg:mt-[52px] lg:gap-[52px]">
-            <div className="main-blog border-grey bg-white p-[10px] rounded-xl">
+            <div
+              className="main-blog border-grey bg-white p-[10px] rounded-xl"
+              data-aos="fade"
+            >
               <div className="card-article-component gap-4 flex flex-col w-full md:grid grid-cols-2 md:items-center lg:gap-6">
                 <img
                   src="/assets/images/article-4.png"
@@ -68,14 +71,20 @@ export default function Blog() {
             <div className="flex flex-col gap-6 md:grid grid-cols-3 lg:gap-y-8 lg:gap-x-6">
               {listArticles2.map(
                 ({ title, category, readTime, img }, index) => (
-                  <CardArticle
-                    href="/blog/detail"
-                    img={img}
-                    title={title}
-                    readTime={readTime}
-                    category={category}
+                  <div
                     key={index}
-                  />
+                    data-aos="fade-up"
+                    data-aos-delay={`${index * 100}`}
+                  >
+                    <CardArticle
+                      href="/blog/detail"
+                      img={img}
+                      title={title}
+                      readTime={readTime}
+                      category={category}
+                      key={index}
+                    />
+                  </div>
                 )
               )}
             </div>

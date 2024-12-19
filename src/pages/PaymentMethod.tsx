@@ -1,12 +1,8 @@
-import Badge from "../components/Badge";
-import Button from "../components/Button";
-import CartProductCard from "../components/CartProductCard";
 import Footer from "../components/Footer";
+import Button from "../components/Button";
 import { InputDate, InputText } from "../components/Input";
 import Navbar from "../components/Navbar";
-import { cartListProducts } from "../datas/cartListProducts";
 import { paymentMethods } from "../datas/paymentMethods";
-import RelatedProducts from "../layouts/RelatedProducts";
 import { Left, Right, UsersTransaction } from "../layouts/UsersTransaction";
 
 export default function PaymentMethod() {
@@ -22,7 +18,10 @@ export default function PaymentMethod() {
         >
           <Left>
             <div className="flex flex-col gap-6 lg:gap-8">
-              <div className="bg-white p-4 border-grey rounded-xl lg:py-8 lg:px-6">
+              <div
+                className="bg-white p-4 border-grey rounded-xl lg:py-8 lg:px-6"
+                data-aos="fade-up"
+              >
                 <h1 className="title">Payment Method</h1>
 
                 <div className="flex flex-col gap-6 mt-6">
@@ -63,7 +62,7 @@ export default function PaymentMethod() {
                 </div>
               </div>
 
-              <div>
+              <div data-aos="fade-up">
                 <div className="bg-white p-4 border-grey rounded-xl lg:py-8 lg:px-6">
                   <h1 className="title">Add Debit Card</h1>
 
@@ -104,7 +103,7 @@ export default function PaymentMethod() {
 
           <hr className="md:hidden" />
 
-          <Right btnHref="/payment-success"/>
+          <Right btnHref="/payment-success" />
         </UsersTransaction>
 
         <div className="">

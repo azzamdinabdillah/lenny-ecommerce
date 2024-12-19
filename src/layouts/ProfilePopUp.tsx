@@ -1,4 +1,4 @@
-export default function ProfilePopUp({setOpenSignIn}: {setOpenSignIn: Function}) {
+export default function ProfilePopUp({setOpenSignIn, setOpenSignUp}: {setOpenSignIn: Function; setOpenSignUp: Function}) {
   return (
     <div className="flex gap-6 flex-col p-6 bg-white">
       <div className="gap-4 flex items-center">
@@ -44,7 +44,11 @@ export default function ProfilePopUp({setOpenSignIn}: {setOpenSignIn: Function})
         <div className="gap-2 flex flex-col">
           <div className="flex gap-3 items-center" onClick={() => setOpenSignIn(true)}>
             <img src="/assets/icons/purchase.svg" alt="" />
-            <p className="par-1-16 text-grey-01">Login</p>
+            <p className="par-1-16 text-grey-01">Sign In</p>
+          </div>
+          <div className="flex gap-3 items-center" onClick={() => setOpenSignUp(true)}>
+            <img src="/assets/icons/purchase.svg" alt="" />
+            <p className="par-1-16 text-grey-01">Sign Up</p>
           </div>
           <div className="flex gap-3 items-center">
             <img src="/assets/icons/purchase.svg" alt="" />

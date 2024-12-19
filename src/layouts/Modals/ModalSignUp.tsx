@@ -1,33 +1,43 @@
 import Button from "../../components/Button";
-import { InputText } from "../../components/Input";
+import { InputPassword, InputText } from "../../components/Input";
 
-export function ModalSignIn({ setOpenSignIn }: { setOpenSignIn: Function }) {
+export function ModalSignUp({ setOpenSignUp }: { setOpenSignUp: Function }) {
   return (
     <>
       <div
         className="vh-100 vw-100 bg-black-01/50 flex justify-center items-center fixed top-0 left-0 right-0 bottom-0 z-30 p-6 outer"
         onClick={(e) => {
           if (e.target.classList.contains("outer")) {
-            setOpenSignIn(false);
+            setOpenSignUp(false);
           }
         }}
       >
         <div className="bg-white py-8 px-6 flex flex-col gap-[34px] rounded-lg border-grey shadow-lg w-[327px] md:max-w-[440px] md:w-full inner">
           <div className="top flex flex-col gap-6 lg:gap-8">
-            <h1 className="eh-6 text-black-01 lg:eh-5">Sign In</h1>
-            <div>
+            <h1 className="eh-6 text-black-01 lg:eh-5">Sign Up</h1>
+            <div className="flex flex-col gap-2 lg:gap-4">
+              <InputText
+                labelName="Name"
+                labelSize="lg"
+                placeholder="Enter your name"
+              />
               <InputText
                 labelName="Phone Number or Email"
                 labelSize="lg"
                 placeholder="Enter your phone number or email"
               />
+              <InputPassword
+                labelName="Password"
+                labelSize="lg"
+                placeholder="Enter your password"
+              />
 
-              <p className="par-3 text-[#1D9E34] text-end mt-2 w-full lg:par-2 lg:mt-4 font-medium lg:font-medium">
+              <p className="par-3 text-[#1D9E34] text-end w-full lg:par-2 font-medium lg:font-medium">
                 Getting Trouble?
               </p>
             </div>
 
-            <Button variant="primary">Sign In</Button>
+            <Button variant="primary">Sign Up</Button>
           </div>
 
           <div className="relative lg:py-2">

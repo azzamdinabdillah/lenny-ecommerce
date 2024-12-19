@@ -65,7 +65,11 @@ export function Left({ children }: { children: ReactNode }) {
 
 export function Right({ btnHref }: { btnHref?: string }) {
   return (
-    <div className="flex gap-6 flex-col md:col-span-2 md:bg-white md:border-grey md:p-6 md:sticky top-4 xl:col-span-3">
+    <div
+      className="flex gap-6 flex-col md:col-span-2 md:bg-white md:border-grey md:p-6 md:sticky top-4 xl:col-span-3"
+      data-aos="fade-left"
+      data-aos-delay="500"
+    >
       <h1 className="eh text-black-01 xl:eh-6">Product Summary</h1>
 
       <div className="gap-3 flex flex-col xl:gap-4">
