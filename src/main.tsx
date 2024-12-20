@@ -2,7 +2,7 @@ import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { Home } from "./pages/Home";
-import { BrowserRouter, Routes, Route, useFetcher } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 import SearchResult from "./pages/SearchResult";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";

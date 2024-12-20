@@ -7,7 +7,8 @@ export function ModalSignIn({ setOpenSignIn }: { setOpenSignIn: Function }) {
       <div
         className="vh-100 vw-100 bg-black-01/50 flex justify-center items-center fixed top-0 left-0 right-0 bottom-0 z-30 p-6 outer"
         onClick={(e) => {
-          if (e.target.classList.contains("outer")) {
+          const target = e.target as HTMLElement;
+          if (target.classList.contains("outer")) {
             setOpenSignIn(false);
           }
         }}

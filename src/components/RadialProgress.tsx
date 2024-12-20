@@ -4,6 +4,12 @@ const RadialProgress = ({
   size = 100,
   strokeWidth = 4,
   color = "blue",
+}: {
+  rating: number;
+  maxRating: number;
+  size: number;
+  color: string;
+  strokeWidth?: number;
 }) => {
   const progress = (rating / maxRating) * 100; // Konversi rating menjadi persentase
   const radius = (size - strokeWidth) / 2;
