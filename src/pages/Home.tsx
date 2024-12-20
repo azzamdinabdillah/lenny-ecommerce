@@ -85,7 +85,11 @@ export function Home() {
           <div className="list-products grid grid-cols-2 gap-4 gap gap-y-6 mt-7 md:grid-cols-4 lg:mt-[52px] lg:gap-6">
             {listProducts.map(
               ({ img, location, price, rating, title, totalSold }, index) => (
-                <div key={index} data-aos="zoom-in" data-aos-delay={`${index * 50}`}>
+                <div
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-delay={`${index * 50}`}
+                >
                   <CardProduct
                     img={img}
                     location={location}
@@ -99,9 +103,11 @@ export function Home() {
             )}
           </div>
           <div className="w-full flex justify-center mt-8 lg:mt-[52px]">
-            <button className="btn-primary-light py-[14px] px-[32px] h3 lg:eh lg:py-[10px] lg:px-4 xl:h2 mx-auto lg:w-[180px] lg:h-[48px] xl:w-[200px] xl:h-[53px]">
-              Load More
-            </button>
+            <a href="/search-result">
+              <button className="btn-primary-light py-[14px] px-[32px] h3 lg:eh lg:py-[10px] lg:px-4 xl:h2 mx-auto lg:w-[180px] lg:h-[48px] xl:w-[200px] xl:h-[53px]">
+                Load More
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -109,14 +115,21 @@ export function Home() {
       <div className="ipad px-6  py-10 lg:py-[60px] xl:py-[80px]">
         <div className="wrapper screen-max-size mx-auto">
           <div className="rounded-2xl bg-orange-03 px-6 py-5 gap-8 flex flex-col md:flex-row md:items-center md:py-[42px] md:px-[50px] lg:py-[76px] lg:gap-14 xl:py-[94px] xl:px-[135px] xl:gap-40">
-            <div className="md:flex-1 md:w-full" data-aos="fade-right" data-aos-delay="800">
+            <div
+              className="md:flex-1 md:w-full"
+              data-aos="fade-right"
+              data-aos-delay="800"
+            >
               <img
                 src="/assets/images/ipad.png"
                 alt=""
                 className="w-[157px] mt-[11px] md:mx-auto md:scale-[1.7] lg:scale-[2.1] xl:scale-[2.5] md:mt-0"
               />
             </div>
-            <div className="gap-8 flex flex-col md:w-[300px] lg:w-[400px] xl:w-[483px]" data-aos="zoom-in">
+            <div
+              className="gap-8 flex flex-col md:w-[300px] lg:w-[400px] xl:w-[483px]"
+              data-aos="zoom-in"
+            >
               <div className="text gap-3 flex flex-col lg:gap-4">
                 <h1 className="h2 text-black-01 lg:eh-4 xl:eh-2">
                   Ipad Air Gen 5
@@ -145,7 +158,10 @@ export function Home() {
       <div className="category py-[60px] px-[24px] lg:py-[20px] xl:py-[40px]">
         <div className="wrapper screen-max-size gap-[34px] flex flex-col mx-auto xl:gap-[52px]">
           <div className="top flex justify-between items-center">
-            <h1 className="h2 text-black-01 lg:eh-4 xl:eh-2" data-aos="fade-right">
+            <h1
+              className="h2 text-black-01 lg:eh-4 xl:eh-2"
+              data-aos="fade-right"
+            >
               Lenny’s Article
             </h1>
             <div data-aos="fade-left">
@@ -160,6 +176,7 @@ export function Home() {
             {listArticles.map(({ title, date, description, img }, index) => (
               <div data-aos="zoom-out" data-aos-delay={`${index * 50}`}>
                 <CardArticle
+                  href="/blog/detail"
                   img={img}
                   title={title}
                   date={date}
